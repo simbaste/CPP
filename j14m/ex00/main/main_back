@@ -1,0 +1,26 @@
+#include "Lemon.h"
+#include "Banana.h"
+#include "FruitNode.h"
+#include "FruitBox.h"
+
+int main(void)
+{
+  Lemon* l = new Lemon;
+  Banana* b = new Banana;
+  std::cout << l->getName() << std::endl;
+  std::cout << b->getName() << std::endl;
+
+  FruitBox Cagette(2);
+  std::cout << Cagette.nbFruits() << std::endl;
+  Cagette.putFruit(l);
+  Cagette.putFruit(b);
+  std::cout << Cagette.nbFruits() << std::endl;
+  std::cout << Cagette.head()->fruit->getName() << std::endl;
+  std::cout << Cagette.head()->next->fruit->getName() << std::endl;
+  l = static_cast<Lemon*>(Cagette.pickFruit());
+  Cagette.putFruit(l);
+  std::cout << Cagette.nbFruits() << std::endl;
+  std::cout << Cagette.head()->fruit->getName() << std::endl;
+  std::cout << Cagette.head()->next->fruit->getName() << std::endl;
+  return 1337;
+}

@@ -1,0 +1,39 @@
+//
+// droidmemory.hh for  in /home/simomb_s/piscine_cpp_d08/ex01
+//
+// Made by stephanedarcy simomba
+// Login   <simomb_s@epitech.net>
+//
+// Started on  Wed Jan 13 14:46:56 2016 stephanedarcy simomba
+// Last update Wed Jan 13 16:32:05 2016 stephanedarcy simomba
+//
+
+#ifndef DROIDMEMORY_H_
+# define DROIDMEMORY_H_
+
+#include <string>
+#include <iostream>
+
+class DroidMemory
+{
+private:
+  size_t	FingerPrint;
+  size_t	Exp;
+public:
+  DroidMemory();
+  ~DroidMemory();
+  size_t	getFingerPrint();
+  size_t	getExp();
+  void		setFingerPrint(size_t);
+  void		setExp(size_t);
+  DroidMemory	&operator<<(DroidMemory &);
+  DroidMemory	&operator>>(DroidMemory &);
+  DroidMemory	&operator+=(DroidMemory &);
+  DroidMemory	&operator+=(size_t);
+  DroidMemory	operator+(DroidMemory &);
+  DroidMemory	operator+(size_t);
+};
+
+std::ostream	&operator<<(std::ostream &os, DroidMemory &mem);
+
+#endif /* DROIDMEMORY_H_ */
